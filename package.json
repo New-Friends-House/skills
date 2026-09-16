@@ -1,0 +1,21 @@
+{
+  "name": "@new-friends-house/skills",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared agent skills installable with the skills CLI.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/New-Friends-House/skills.git"
+  },
+  "packageManager": "pnpm@10.33.4",
+  "engines": {
+    "node": ">=22.20.0"
+  },
+  "scripts": {
+    "skills": "skills",
+    "skills:list": "skills add . --list"
+  },
+  "devDependencies": {
+    "skills": "1.5.25"
+  }
+}
