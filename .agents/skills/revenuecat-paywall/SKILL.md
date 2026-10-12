@@ -1,11 +1,11 @@
 ---
 name: revenuecat-paywall
-description: Display a RevenueCat paywall inside an app using the RevenueCatUI SDK. Use when the user asks to add a paywall, show a RevenueCat paywall, present PaywallView, integrate RevenueCatUI, gate a premium screen with a paywall, launch PaywallActivity, call presentPaywall or presentPaywallIfNeeded, or show the dashboard configured paywall UI on iOS, Android, Kotlin Multiplatform, Flutter, or React Native.
+description: Display a RevenueCat paywall inside an app using the RevenueCatUI SDK. Use when the user asks to add a paywall, show a RevenueCat paywall, present PaywallView, integrate RevenueCatUI, gate a premium screen with a paywall, launch PaywallActivity, call presentPaywall or presentPaywallIfNeeded, or show the dashboard configured paywall UI on iOS, Android, Kotlin Multiplatform, Flutter, or React Native. To create, edit, evaluate, or audit the dashboard paywall itself, use revenuecat-paywall-design.
 ---
 
 # revenuecat-paywall: display a RevenueCat paywall
 
-Use this skill when the user wants to show a paywall that is built and configured in the RevenueCat dashboard, using the native RevenueCatUI components. This skill does not cover building a custom paywall from scratch. For that, use `revenuecat-purchase-flow` (when available) and `Purchases.getOfferings(…)` directly.
+Use this skill when the user wants to show a paywall that is built and configured in the RevenueCat dashboard, using the native RevenueCatUI components. This skill does not cover building a custom paywall from scratch. For that, use `revenuecat-purchase-flow` and `Purchases.getOfferings(…)` directly. If the user has not chosen between the two, see `integrate-revenuecat`, Section 5c. To create, edit, evaluate, or audit the dashboard paywall, use `revenuecat-paywall-design`.
 
 Prerequisite: `integrate-revenuecat` has already run. `Purchases.configure(…)` must succeed before a paywall can load.
 
@@ -31,7 +31,7 @@ If several match (e.g. an `ios/` folder inside a Flutter project), pick the **ou
   - (c) Conditional present on a CTA tap, such as an "Upgrade" button in settings.
 - **RevenueCatUI owns the purchase flow.** Do not call `Purchases.purchase(…)` manually alongside a RevenueCatUI paywall. The paywall calls it internally. Listen for the dismiss or purchase completed callback to react in app code.
 - **Close button is opt in on most platforms.** Pass `displayCloseButton = true` (iOS / Flutter / RN) or `setShouldDisplayDismissButton(true)` (Android / KMP) when the paywall is presented modally and the user needs a way out. Skip it when presenting behind a sheet with its own grabber, or when wrapping the paywall in a navigation controller.
-- **If the app needs a fully custom UI**, do not use this skill. Call `Purchases.getOfferings()` and render your own components. RevenueCatUI is only for dashboard templated paywalls.
+- **If the user has chosen a fully custom UI**, do not use this skill. Call `Purchases.getOfferings()` and render your own components. RevenueCatUI is only for dashboard templated paywalls.
 
 ## 3. Implementation
 

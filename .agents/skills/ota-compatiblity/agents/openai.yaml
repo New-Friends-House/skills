@@ -1,0 +1,4 @@
+interface:
+  display_name: "OTA Compatibility"
+  short_description: "미커밋 변경을 포함한 작업 상태와 EAS 빌드의 fingerprint 비교 및 원인 분석"
+  default_prompt: "$ota-compatiblity로 미커밋 변경을 포함한 현재 작업 디렉터리와 지정한 EAS 빌드의 fingerprint를 비교하고, 불일치하면 빌드 커밋부터 현재 작업 상태까지의 변경을 조사해 원인과 근거를 설명해줘."

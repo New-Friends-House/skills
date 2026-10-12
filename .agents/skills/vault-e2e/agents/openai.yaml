@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vault E2E"
+  short_description: "Vault/API·Web E2E 실행과 실패 수정·재검증"
+  default_prompt: "$vault-e2e 스킬로 실행 범위를 확인하고, 선택한 테스트의 실패 수정과 재검증까지 완료해줘."
